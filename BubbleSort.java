@@ -21,7 +21,9 @@ public class BubbleSort {
  
     public static void bubbleSort(int[] numeros) {
         //bubble Sort
+        
         for (int i=0; i<numeros.length -1; i++){
+            boolean trocou = false; //flag
             for (int j=0; j<numeros.length -1; j++){
                 System.out.println("\nInteração " + i + " : " + j);
                 //compara elementos vizinhos
@@ -30,7 +32,15 @@ public class BubbleSort {
                     int temp = numeros[j];
                     numeros[j] = numeros[j+1];
                     numeros[j+1] = temp;
+
+                    trocou = true;
                 }
+                visualizaVetor(numeros);
+                    
+                }
+                if (!trocou){
+                        System.out.println("\nVetor ordenado");
+                        break;
             }
         }
     }
